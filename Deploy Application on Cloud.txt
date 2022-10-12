@@ -1,0 +1,28 @@
+Deploy Application on Cloud
+Spring Boot web Application:
+package com.example;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+@SpringBootApplication(scanBasePackages="com")
+public class SpringbootWebAppApplication {
+	public static void main(String[] args) {
+		SpringApplication.run(SpringbootWebAppApplication.class, args);
+	}
+}
+Welcome RestController:
+package com.example;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class WelcomeRestController {
+	@GetMapping("/")
+	public String welcomeMsg() {
+		return "Welcome Spring Boot Application on AWS Cloud";
+	}
+
+}
+Open SSH Command:
+java -jar springboot-web-app-0.0.1-SNAPSHOT.jar
+
